@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
     return;
   }
 
+  
   const profData = prepared.transformed[profCode];
   if (!profData) {
     root.innerHTML = renderError(`Нет нормативных данных СИЗ для профессии ${escapeHtml(profCode)}.`);

@@ -30,6 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
     URL.revokeObjectURL(url);
   }
 
+  
   // --- Просмотр: просто ссылка ---
   document.querySelectorAll('.js-pdf-view[data-pdf]').forEach((btn) => {
     const pdfPath = btn.dataset.pdf;

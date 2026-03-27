@@ -18,6 +18,7 @@ if (burger && menu && page) {
     }
   });
 
+  
   document.addEventListener('click', (event) => {
     const clickedInsideMenu = menu.contains(event.target);
     const clickedBurger = burger.contains(event.target);

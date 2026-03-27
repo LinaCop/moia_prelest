@@ -29,6 +29,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     }[s]));
   }
 
+  
   const cssEscape = (window.CSS && typeof window.CSS.escape === 'function')
     ? window.CSS.escape.bind(window.CSS)
     : (s) => String(s).replace(/[^a-zA-Z0-9_\-]/g, '\\$&');
