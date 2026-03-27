@@ -1,0 +1,37 @@
+.r-actions {
+  margin-top: 14px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.r-btn,
+.doc-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 11px 15px;
+  cursor: pointer;
+  transition: 180ms ease;
+}
+
+.r-btn--primary,
+.doc-btn--primary {
+  background: linear-gradient(135deg, #135a96, #0f3f6d);
+  color: #fff;
+}
+
+.r-btn--primary:hover,
+.doc-btn--primary:hover {
+  transform: translateY(-1px);
+}
+
+.r-btn--ghost,
+.doc-btn--ghost {
+  background: rgba(255,255,255,0.84);
+  color: #0f172a;
+  border: 1px solid rgba(120,145,170,0.24);
+}

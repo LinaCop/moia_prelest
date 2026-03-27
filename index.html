@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ПрофЗдоровье — проверка СИЗ для работников</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="side-menu" id="sideMenu">
+    <div class="side-menu__header">Навигация</div>
+    <a href="index.html" class="side-menu__item side-menu__item--active">Главная</a>
+    <a href="page1.html" class="side-menu__item">Пройти тест</a>
+    <a href="page2.html" class="side-menu__item">Нормативная документация</a>
+    <a href="#footer" class="side-menu__item">Контакты</a>
+    <div class="side-menu__footer">© 2026<br />ПрофЗдоровье</div>
+  </nav>
+
+  <div class="page">
+    <div class="top-row">
+      <div class="burger" id="burger" aria-label="Открыть меню" role="button" tabindex="0">
+        <span></span><span></span><span></span>
+      </div>
+      <img src="images/Logo.png" alt="Логотип ПрофЗдоровье" />
+      <div class="site-title-wrap">
+        <div class="site-kicker">Цифровой помощник работника</div>
+        <div class="site-title">Профессиональное здоровье работников РФ</div>
+      </div>
+    
+    </div>
+
+    <div class="divider"></div>
+
+    <section class="hero">
+      <div class="hero-text">
+
+        <h1 class="hero-title">Определение положенных средств индивидуальной защиты по профессии</h1>
+        <p class="hero-p">
+          Сайт позволяет определить обязательные СИЗ по профессии, сопоставить их с фактически выданными средствами и получить структурированный результат.
+        </p>
+        <div class="hero-actions">
+          <button class="hero-button" onclick="window.location.href='page1.html'">Начать проверку</button>
+          <a class="hero-button hero-button--secondary" href="page2.html">Открыть документы</a>
+        </div>
+        <div class="hero-meta">
+          <div class="hero-stat">
+            <div class="hero-stat__value">Единый алгоритм</div>
+            <div class="hero-stat__label">для последовательной проверки обеспеченности</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat__value">СИЗ и ЛПП</div>
+            <div class="hero-stat__label">в итоговом заключении по профессии</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat__value">Быстрый результат</div>
+            <div class="hero-stat__label">в понятной и наглядной форме</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-image" aria-hidden="true"></div>
+    </section>
+
+    <section class="section-grid">
+      <div class="info-panel">
+        <h2 class="panel-title">Как это работает</h2>
+        <p class="panel-text">Пользователь выбирает профессию и указывает фактически выданные средства, после чего система формирует итоговое сравнение с установленными нормами.</p>
+        <div class="steps">
+          <div class="step">
+            <div class="step__num">1</div>
+            <div>
+              <div class="step__title">Выбор профессии</div>
+              <div class="step__text">Поиск осуществляется по коду и наименованию профессии, что упрощает работу с большим перечнем позиций.</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__num">2</div>
+            <div>
+              <div class="step__title">Внесение сведений о выданных СИЗ</div>
+              <div class="step__text">Пользователь отмечает фактически выданные средства и сопоставляет их с обязательной нормой.</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__num">3</div>
+            <div>
+              <div class="step__title">Получение результата</div>
+              <div class="step__text">Система отображает соответствия, выявленные дефициты и сведения о лечебно-профилактическом питании.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout-panel">
+        <h2 class="panel-title">Для кого этот сайт</h2>
+        <p class="panel-text">Сайт ориентирован на работников, специалистов по охране труда и образовательные проекты, связанные с вопросами обеспечения СИЗ.</p>
+        <ul class="feature-list">
+          <li>работники производственных и технических профессий</li>
+          <li>специалисты по охране труда и внутреннему контролю</li>
+          <li>образовательные и научные проекты по вопросам профилактики и охраны труда</li>
+        </ul>
+        <div class="badge-note">Основа проверки: действующая нормативно-правовая документация Российской Федерации</div>
+      </div>
+    </section>
+
+    <div class="tabs">
+      <div class="tabs-item" data-icon="🛡️"><strong>Проверка обязательных СИЗ</strong><span>От одежды и обуви до средств защиты дыхания и слуха.</span></div>
+      <div class="tabs-item" data-icon="🔎"><strong>Быстрый поиск профессии</strong><span>По названию или коду без ручного просмотра длинного списка.</span></div>
+      <div class="tabs-item" data-icon="📋"><strong>Понятный результат</strong><span>Сразу видно, чего хватает, а чего не хватает по вашей профессии.</span></div>
+      <div class="tabs-item" data-icon="📚"><strong>Доступ к документам</strong><span>Нормативная база собрана в отдельном разделе сайта.</span></div>
+    </div>
+
+    <section class="articles">
+      <article class="article">
+        <div class="article__eyebrow">Польза для работника</div>
+        <h3>Практическая оценка обеспеченности</h3>
+        <p>Сайт позволяет определить, соответствует ли фактическая выдача обязательным нормам, и представить результат в форме, удобной для последующего анализа.</p>
+      </article>
+      <article class="article">
+        <div class="article__eyebrow">Практический результат</div>
+        <h3>Применение в учебной и практической работе</h3>
+        <p>Полученные данные могут использоваться для обсуждения вопросов обеспечения СИЗ, уточнения информации по условиям труда и демонстрации возможностей цифрового подхода в рамках научного проекта.</p>
+      </article>
+    </section>
+
+    <footer id="footer">
+      <div class="footer-left">
+        <strong>ПрофЗдоровье</strong><br />
+        Проект по оценке обеспеченности работников средствами индивидуальной защиты<br />
+        Почта: proekt_siz@mail.ru
+      </div>
+      <div class="footer-right">
+        <a href="page1.html" class="footer-link">Пройти тест</a>
+        <a href="page2.html" class="footer-link">Нормативная документация</a>
+        <a href="#" class="footer-link">Контакты</a>
+      </div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

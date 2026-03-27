@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Тестирование СИЗ — ПрофЗдоровье</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="page1.css" />
+</head>
+<body>
+  <nav class="side-menu" id="sideMenu">
+    <div class="side-menu__header">Навигация</div>
+    <a href="index.html" class="side-menu__item">Главная</a>
+    <a href="page1.html" class="side-menu__item side-menu__item--active">Пройти тест</a>
+    <a href="page2.html" class="side-menu__item">Нормативная документация</a>
+    <a href="index.html#footer" class="side-menu__item">Контакты</a>
+    <div class="side-menu__footer">© 2026<br />ПрофЗдоровье</div>
+  </nav>
+
+  <div class="page">
+    <div class="top-row">
+      <div class="burger" id="burger" aria-label="Открыть меню" role="button" tabindex="0">
+        <span></span><span></span><span></span>
+      </div>
+      <img src="images/Logo.png" alt="Логотип ПрофЗдоровье" />
+      <div class="site-title-wrap">
+        <div class="site-kicker">Проверка обеспечения</div>
+        <div class="site-title">Профессиональное здоровье работников РФ</div>
+      </div>
+      <div class="site-caption">Сравнение выданных СИЗ с нормой</div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="test-page">
+      <section class="test-header">
+        <div class="test-intro">
+          <div class="test-kicker">Шаг 1. Выберите профессию</div>
+          <h1 class="test-title">Подбор средств индивидуальной защиты</h1>
+          <p class="test-subintro">
+            Выберите профессию, отметьте фактически выданные СИЗ и получите результат в сопоставлении с обязательными нормами. Форма предназначена для последовательной и понятной проверки обеспеченности средствами защиты.
+          </p>
+          <ul class="quick-points">
+            <li>поиск по коду или названию профессии</li>
+            <li>просмотр всех обязательных СИЗ по типам</li>
+            <li>итог с дефицитами и блоком ЛПП</li>
+          </ul>
+        </div>
+        <aside class="test-aside">
+          <h3>Что важно учитывать</h3>
+          <p>Результат показывает типовые нормы и сведения, загруженные для конкретной профессии.</p>
+          <ul>
+            <li>проверяйте фактическое количество выданных средств;</li>
+            <li>при необходимости уточняйте данные у работодателя;</li>
+            <li>информация по ЛПП может требовать уточнения по СОУТ.</li>
+          </ul>
+        </aside>
+      </section>
+
+      <div class="prof-select-wrap">
+        <label class="test-label">Выберите профессию:</label>
+
+        <div class="pselect" id="professionPicker">
+          <button type="button" class="pselect__control" id="pselectControl" aria-haspopup="listbox" aria-expanded="false">
+            <span class="pselect__value" id="pselectValue">-- Выберите профессию --</span>
+            <span class="pselect__chev">▾</span>
+          </button>
+
+          <div class="pselect__panel" id="pselectPanel" style="display: none;">
+            <div class="pselect__search">
+              <input
+                type="text"
+                id="professionSearch"
+                class="pselect__searchInput"
+                placeholder="Поиск по коду или названию…"
+                autocomplete="off"
+              />
+            </div>
+            <div class="pselect__list" id="pselectList" role="listbox"></div>
+          </div>
+
+          <select id="professionSelect" class="test-select" style="display: none;">
+            <option value="">-- Выберите --</option>
+          </select>
+
+          <div class="profession-picker__hint">
+            Например: <span class="chip">1799</span> или <span class="chip">лаборант</span>
+          </div>
+        </div>
+      </div>
+
+      <div id="profInfo" class="prof-info">
+        <p class="prof-text">Выберите профессию, чтобы просмотреть перечень обязательных СИЗ в соответствии с установленными нормами.</p>
+      </div>
+
+      <form id="testForm" class="test-form" style="display: none;">
+        <h2 class="test-subtitle">Отметьте фактически имеющиеся СИЗ:</h2>
+        <div id="sizList" class="siz-list"></div>
+        <button type="submit" class="hero-button">Показать результат</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="siz.js"></script>
+  <script src="page1.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

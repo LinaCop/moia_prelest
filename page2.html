@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Нормативная документация — ПрофЗдоровье</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="page2.css" />
+</head>
+<body>
+  <nav class="side-menu" id="sideMenu">
+    <div class="side-menu__header">Навигация</div>
+    <a href="index.html" class="side-menu__item">Главная</a>
+    <a href="page1.html" class="side-menu__item">Пройти тест</a>
+    <a href="page2.html" class="side-menu__item side-menu__item--active">Нормативная документация</a>
+    <a href="index.html#footer" class="side-menu__item">Контакты</a>
+    <div class="side-menu__footer">© 2026<br />ПрофЗдоровье</div>
+  </nav>
+
+  <div class="page">
+    <div class="top-row">
+      <div class="burger" id="burger" aria-label="Открыть меню" role="button" tabindex="0">
+        <span></span><span></span><span></span>
+      </div>
+      <img src="images/Logo.png" alt="Логотип ПрофЗдоровье" />
+      <div class="site-title-wrap">
+        <div class="site-kicker">Нормативная база</div>
+        <div class="site-title">Профессиональное здоровье работников РФ</div>
+      </div>
+      <div class="site-caption">Документы для проверки СИЗ</div>
+    </div>
+
+    <div class="divider"></div>
+
+    <section class="docs-content">
+      <div class="docs-hero">
+        <div class="info-panel">
+          <h1 class="docs-title">Нормативно-правовая документация</h1>
+          <p class="section-intro">
+            В данном разделе представлены документы, которые используются в проекте при проверке обеспеченности средствами индивидуальной защиты.
+          </p>
+          <div class="steps">
+            <div class="step">
+              <div class="step__num">1</div>
+              <div>
+                <div class="step__title">Открыть документ</div>
+                <div class="step__text">Просмотр документа непосредственно в браузере.</div>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step__num">2</div>
+              <div>
+                <div class="step__title">Скачать PDF</div>
+                <div class="step__text">Сохранение нормативного акта для последующей работы или изучения.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="docs-illustration" aria-hidden="true"></div>
+      </div>
+
+      <div class="docs-grid">
+        <article class="doc-card">
+          <div class="doc-icon">📄</div>
+          <div class="doc-info">
+            <h3 class="doc-title">Приказ Минтруда РФ от 29.10.2021 № 767н</h3>
+            <p class="doc-desc">
+              «Об утверждении единых типовых норм выдачи средств индивидуальной защиты и смывающих средств».
+            </p>
+            <div class="doc-meta">
+              <span class="doc-size">PDF</span>
+              <span class="doc-date">29.10.2021</span>
+              <span class="doc-tag">Основной документ</span>
+            </div>
+          </div>
+
+          <div class="doc-actions">
+            <div class="r-actions">
+              <a class="doc-btn doc-btn--primary js-pdf-view" data-pdf="doc/mintrud.pdf" target="_blank" rel="noopener">Открыть</a>
+              <a class="doc-btn doc-btn--ghost js-pdf-download" data-pdf="doc/mintrud.pdf" data-name="Приказ_767н.pdf" href="#">Скачать</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </div>
+
+  <script src="page2.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

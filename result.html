@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Результаты теста СИЗ — ПрофЗдоровье</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="result.css" />
+</head>
+<body>
+  <nav class="side-menu" id="sideMenu">
+    <div class="side-menu__header">Навигация</div>
+    <a href="index.html" class="side-menu__item">Главная</a>
+    <a href="page1.html" class="side-menu__item">Пройти тест</a>
+    <a href="page2.html" class="side-menu__item">Нормативная документация</a>
+    <a href="index.html#footer" class="side-menu__item">Контакты</a>
+    <div class="side-menu__footer">© 2026<br />ПрофЗдоровье</div>
+  </nav>
+
+  <div class="page">
+    <div class="top-row">
+      <div class="burger" id="burger" aria-label="Открыть меню" role="button" tabindex="0">
+        <span></span><span></span><span></span>
+      </div>
+      <img src="images/Logo.png" alt="Логотип ПрофЗдоровье" />
+      <div class="site-title-wrap">
+        <div class="site-kicker">Итог проверки</div>
+        <div class="site-title">Профессиональное здоровье работников РФ</div>
+      </div>
+      <div class="site-caption">Результат по выбранной профессии</div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="test-page">
+      <div id="resultContainer"></div>
+    </div>
+  </div>
+
+  <script src="siz.js"></script>
+  <script src="lpp.js"></script>
+  <script src="result.js"></script>
+</body>
+</html>
