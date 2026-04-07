@@ -13,6 +13,7 @@
   max-width: 1040px;
   margin: 0 auto;
   padding: 4px 0 34px;
+  min-width: 0;
 }
 
 .test-header {
@@ -32,6 +33,7 @@
   border-radius: var(--p1-radius);
   box-shadow: var(--p1-shadow);
   backdrop-filter: blur(10px);
+  min-width: 0;
 }
 
 .test-intro,
@@ -57,8 +59,8 @@
   margin: 0 0 10px;
   color: var(--p1-text);
   letter-spacing: -0.03em;
+  word-break: break-word;
 }
-
 
 .test-subintro {
   color: var(--p1-muted);
@@ -156,6 +158,7 @@
   gap: 12px;
   padding: 16px 18px;
   cursor: pointer;
+  min-height: 52px;
 }
 
 .siz-type__label::before {
@@ -166,6 +169,7 @@
   display: grid;
   place-items: center;
   background: var(--p1-accent-soft);
+  flex-shrink: 0;
 }
 
 .siz-type__name {
@@ -188,17 +192,21 @@
   display: flex;
   align-items: flex-start;
   gap: 12px;
+  min-width: 0;
 }
 
 .siz-item__name {
   line-height: 1.45;
+  min-width: 0;
+  word-break: break-word;
 }
 
 input[type="checkbox"] {
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   accent-color: var(--p1-accent);
-  margin-top: 4px;
+  margin-top: 2px;
+  flex-shrink: 0;
 }
 
 .siz-item__qty {
@@ -223,11 +231,13 @@ input[type="checkbox"] {
 
 .qty-input {
   width: 132px;
+  max-width: 100%;
   border: 1px solid var(--p1-border);
   border-radius: 12px;
   padding: 10px 12px;
   font-size: 0.95rem;
   background: #fff;
+  min-height: 44px;
 }
 
 .qty-input:focus,
@@ -262,16 +272,25 @@ input[type="checkbox"] {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 12px;
   padding: 14px 16px;
   border-radius: 18px;
   border: 1px solid var(--p1-border);
   background: rgba(255,255,255,0.9);
   box-shadow: var(--p1-shadow);
   cursor: pointer;
+  min-height: 52px;
+  text-align: left;
 }
 
 .pselect__value {
   text-align: left;
+  min-width: 0;
+  word-break: break-word;
+}
+
+.pselect__chev {
+  flex-shrink: 0;
 }
 
 .pselect__panel {
@@ -298,6 +317,7 @@ input[type="checkbox"] {
   border: 1px solid var(--p1-border);
   border-radius: 12px;
   padding: 11px 12px;
+  min-height: 44px;
 }
 
 .pselect__list {
@@ -312,6 +332,7 @@ input[type="checkbox"] {
   padding: 14px 14px;
   text-align: left;
   cursor: pointer;
+  min-height: 48px;
 }
 
 .pselect__option:hover {
@@ -334,5 +355,174 @@ input[type="checkbox"] {
 @media (max-width: 900px) {
   .test-header {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .test-intro,
+  .test-aside {
+    padding: 18px;
+  }
+
+  .hero-button {
+    width: 100%;
+  }
+
+  .pselect__list {
+    max-height: 50vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .test-page {
+    padding-bottom: 24px;
+  }
+
+  .test-header {
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+
+  .test-intro,
+  .test-aside,
+  .prof-info,
+  .siz-item,
+  .siz-type {
+    border-radius: 18px;
+  }
+
+  .test-intro,
+  .test-aside,
+  .prof-info {
+    padding: 16px;
+  }
+
+  .test-kicker {
+    font-size: 0.74rem;
+    margin-bottom: 10px;
+    padding: 7px 10px;
+  }
+
+  .test-title {
+    font-size: 1.45rem;
+    line-height: 1.12;
+  }
+
+  .test-subintro,
+  .test-aside p,
+  .test-aside li,
+  .prof-text,
+  .profession-picker__hint {
+    font-size: 0.93rem;
+  }
+
+  .quick-points {
+    gap: 8px;
+  }
+
+  .quick-points li {
+    padding-left: 24px;
+  }
+
+  .quick-points li::before {
+    left: 8px;
+  }
+
+  .pselect__control {
+    padding: 12px 14px;
+    border-radius: 14px;
+  }
+
+  .pselect__panel {
+    border-radius: 16px;
+    top: calc(100% + 8px);
+  }
+
+  .pselect__search {
+    padding: 10px;
+  }
+
+  .pselect__searchInput {
+    padding: 10px 12px;
+  }
+
+  .pselect__list {
+    max-height: 45vh;
+  }
+
+  .pselect__option {
+    padding: 12px;
+  }
+
+  .test-subtitle {
+    font-size: 1rem;
+    margin: 16px 0 10px;
+  }
+
+  .siz-list {
+    gap: 10px;
+  }
+
+  .siz-type__label {
+    padding: 14px;
+    gap: 10px;
+  }
+
+  .siz-type__label::before {
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+  }
+
+  .siz-type__items {
+    padding: 10px;
+  }
+
+  .siz-item {
+    padding: 12px;
+    margin-top: 8px;
+  }
+
+  .siz-item__label {
+    gap: 10px;
+  }
+
+  .siz-item__name {
+    font-size: 0.94rem;
+    line-height: 1.4;
+  }
+
+  input[type="checkbox"] {
+    width: 22px;
+    height: 22px;
+  }
+
+  .siz-item__qty {
+    padding: 10px;
+    border-radius: 12px;
+  }
+
+  .qty-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .qty-label {
+    font-size: 0.9rem;
+  }
+
+  .qty-input {
+    width: 100%;
+  }
+
+  .qty-unit,
+  .chip {
+    width: fit-content;
+    font-size: 0.76rem;
+  }
+
+  .hero-button {
+    margin-top: 16px;
   }
 }
