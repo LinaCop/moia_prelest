@@ -29,10 +29,59 @@
   transform: translateY(-1px);
 }
 
-
 .r-btn--ghost,
 .doc-btn--ghost {
-  background: rgba(255,255,255,0.84);
+  background: rgba(255, 255, 255, 0.84);
   color: #0f172a;
-  border: 1px solid rgba(120,145,170,0.24);
+  border: 1px solid rgba(120, 145, 170, 0.24);
+}
+
+.docs-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.doc-card {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 18px;
+  align-items: start;
+}
+
+.doc-icon {
+  font-size: 32px;
+  line-height: 1;
+}
+
+.doc-info {
+  min-width: 0;
+}
+
+.doc-title {
+  margin: 0 0 8px;
+}
+
+.doc-desc {
+  margin: 0 0 10px;
+}
+
+.doc-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.doc-actions {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .doc-card {
+    grid-template-columns: 1fr;
+  }
+
+  .doc-actions {
+    align-items: flex-start;
+  }
 }

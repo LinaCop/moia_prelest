@@ -4,20 +4,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const rawSiz = window.SIZ;
   const rawLpp = window.LPP || {};
+
   if (!rawSiz) {
     root.innerHTML = renderError('Не удалось загрузить нормативные данные. Проверьте файл siz.js.');
     return;
   }
 
   const prepared = transformJsonToInternal(rawSiz);
-
   const raw = localStorage.getItem('TEST_RESULT');
+
   if (!raw) {
     root.innerHTML = renderError('Нет данных теста. Вернитесь на страницу теста и пройдите его заново.');
     return;
   }
 
   let test;
+
   try {
     test = JSON.parse(raw);
   } catch (e) {
@@ -26,13 +28,14 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   const profCode = String(test?.profCode || localStorage.getItem('PROF_CODE') || '');
+
   if (!profCode) {
     root.innerHTML = renderError('Не удалось определить профессию.');
     return;
   }
 
-  
   const profData = prepared.transformed[profCode];
+
   if (!profData) {
     root.innerHTML = renderError(`Нет нормативных данных СИЗ для профессии ${escapeHtml(profCode)}.`);
     return;
@@ -59,12 +62,11 @@ function escapeHtml(str) {
 function renderError(msg, lppInfo = null) {
   const lppSection = lppInfo
     ? `
-
       <div class="r-block r-block--lpp">
         <div class="r-subtitle">Лечебно-профилактическое питание</div>
         ${renderLppBlock(lppInfo)}
       </div>
-  `
+    `
     : '';
 
   return `
@@ -163,6 +165,7 @@ function buildGivenMap(test) {
 
   items.forEach((x) => {
     const qty = Number(x?.qty || 0);
+
     if (!isFinite(qty)) return;
 
     let itemId = x?.itemId;
@@ -184,7 +187,6 @@ function evaluate(requiredItems, givenMap) {
   const rows = requiredItems.map((r) => {
     const key = String(r.itemId || '');
     const givenQty = givenMap.has(key) ? Number(givenMap.get(key)) : 0;
-
     const ok = givenQty >= r.requiredQty;
     const deficit = ok ? 0 : Math.max(0, r.requiredQty - givenQty);
 
@@ -281,8 +283,7 @@ function renderResult(profData, evaluation, lppInfo) {
       </div>
 
       <div class="r-block">
-        <div class="r-subtitle">Недостаточное обеспечение по вашим ответам</div>
-
+        <div class="r-subtitle">Согласно результатам тестирования выявлены следующие несоответствия</div>
         ${evaluation.deficits.length === 0
           ? `<div class="r-okline">По вашим ответам недостатков не выявлено.</div>`
           : renderDeficitList(evaluation.deficits)
@@ -328,7 +329,6 @@ function renderRequiredTable(rows) {
   `;
 }
 
-
 function renderLppBlock(lppInfo) {
   const safeText = escapeHtml(lppInfo?.text || 'Информация по лечебно-профилактическому питанию отсутствует.');
   const isDefault = /не найдена|отсутствует/i.test(String(lppInfo?.text || ''));
@@ -338,6 +338,14 @@ function renderLppBlock(lppInfo) {
       <div class="r-lpp__icon" aria-hidden="true">🍽️</div>
       <div class="r-lpp__content">
         <div class="r-lpp__text">${safeText}</div>
+        <div class="r-lpp__note">
+          Пример выписки из СОУТ с информацией о лечебно-профилактическом питании, а также о молоке и других равноценных пищевых продуктах, доступен по кнопке ниже. На 3-й странице нужные сведения выделены красным маркером.
+        </div>
+        <div class="r-lpp__actions">
+          <a class="r-btn r-btn--primary" href="doc/SOUT.pdf" target="_blank" rel="noopener noreferrer">
+            Открыть пример выписки СОУТ
+          </a>
+        </div>
       </div>
     </div>
   `;

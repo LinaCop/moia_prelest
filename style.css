@@ -359,7 +359,7 @@ a {
     linear-gradient(90deg, rgba(244,248,252,0.95), rgba(244,248,252,0.15) 35%),
     url("images/maska.jpg");
   background-size: cover;
-  background-position: center;
+  background-position: right;
 }
 
 .section-grid {
